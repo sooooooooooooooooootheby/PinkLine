@@ -12,7 +12,6 @@
     "dependencies": {
         "@nuxt/content": "^3.3.0",
         "@nuxt/icon": "1.11.0",
-        "@nuxthq/studio": "2.2.1",
         "@nuxtjs/color-mode": "3.5.2",
         "@types/rss": "^0.0.32",
         "@waline/client": "^3.5.6",
