@@ -11,7 +11,7 @@
         </ul>
         <ul class="navigate mobi">
             <li class="item" :class="{ isActive: isPath(item.path) }" v-for="item in appConfig.page" :key="item.path">
-                <NuxtLink :to="item.apth"><Icon :name="item.icon" /></NuxtLink>
+                <NuxtLink :to="item.path"><Icon :name="item.icon" /></NuxtLink>
             </li>
             <li class="item">
                 <NuxtLink to="/rss.xml" target="_blank"><Icon name="akar-icons:rss" /></NuxtLink>
