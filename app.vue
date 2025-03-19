@@ -23,6 +23,12 @@ const appConfig = useAppConfig();
 
 const color: Ref<string> = ref("");
 
+useHead({
+    title: appConfig.info.title + " | " + appConfig.info.author,
+    meta: [{ name: "description", content: appConfig.info.description }],
+    link: [{ rel: "icon", type: "image/x-icon", href: "/logo_MG.gif" }],
+});
+
 useSeoMeta({
     title: appConfig.info.title + " | " + appConfig.info.author,
     htmlAttrs: {
