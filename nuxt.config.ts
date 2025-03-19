@@ -6,7 +6,7 @@ export default defineNuxtConfig({
         pageTransition: { name: "page", mode: "out-in" },
     },
 
-    modules: ["@nuxt/content", "@nuxtjs/color-mode", "@nuxt/icon", "nuxt-module-feed"],
+    modules: ["@nuxt/content", "@nuxtjs/color-mode", "@nuxt/icon", "nuxt-module-feed", "@nuxthq/studio"],
 
     css: ["~/assets/base.scss", "~/assets/theme.scss", "~/assets/sspai.scss", "~/assets/waline.css"],
 
