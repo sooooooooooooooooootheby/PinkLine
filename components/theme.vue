@@ -17,11 +17,14 @@ const colorMode = useColorMode();
 
 const handleTheme = (mode: string): void => {
     colorMode.preference = mode;
+    const element: HTMLElement = document.documentElement;
+    element.classList.remove("dark", "light");
+    element.classList.add(mode);
 };
 
 onMounted(() => {
     const element: HTMLElement = document.documentElement;
-    element.classList.add(colorMode.value);
+    element.classList.add(colorMode.value === "dark" ? "dark" : "light");
 });
 </script>
 

@@ -10,7 +10,7 @@ onMounted(() => {
     init({
         el: "#waline",
         serverURL: appConfig.comment.serverUrl,
-        dark: "html[class='dark-mode']",
+        dark: "html[class='dark dark-mode']",
         emoji: appConfig.comment.emoji,
     });
 });
