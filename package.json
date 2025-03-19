@@ -1,0 +1,37 @@
+{
+    "name": "PinkLine",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare"
+    },
+    "dependencies": {
+        "@nuxt/content": "^3.3.0",
+        "@nuxt/icon": "1.11.0",
+        "@nuxtjs/color-mode": "3.5.2",
+        "@types/rss": "^0.0.32",
+        "@waline/client": "^3.5.6",
+        "axios": "^1.8.3",
+        "gitalk": "^1.8.0",
+        "nuxt": "^3.16.0",
+        "rss": "^1.2.2",
+        "sass": "^1.85.1",
+        "vue": "^3.5.13",
+        "vue-router": "^4.5.0"
+    },
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "@parcel/watcher",
+            "better-sqlite3",
+            "esbuild"
+        ]
+    },
+    "packageManager": "pnpm@10.6.2+sha512.47870716bea1572b53df34ad8647b42962bc790ce2bf4562ba0f643237d7302a3d6a8ecef9e4bdfc01d23af1969aa90485d4cebb0b9638fa5ef1daef656f6c1b",
+    "devDependencies": {
+        "nuxt-module-feed": "^1.1.4"
+    }
+}

@@ -1,0 +1,30 @@
+:root {
+    --theme-color: #d9908e;
+    --theme-color-hover: #e2aba9;
+}
+
+.light-mode body {
+    color: #333;
+    --font-color: rgba(0, 0, 0, 0.8);
+    --border-color: #000000bd;
+    --backgrond-color1: #0000002d;
+}
+.dark-mode body {
+    color: #ffffff;
+    --font-color: #ffffff;
+    --border-color: #ffffffbd;
+    --backgrond-color1: #ffffff2d;
+}
+
+.light-mode {
+    .background {
+        background-color: #fff;
+        transition: .2s;
+    }
+}
+.dark-mode {
+    .background {
+        background-color: #1c1c1e;
+        transition: .2s;
+    }
+}
