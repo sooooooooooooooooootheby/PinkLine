@@ -28,3 +28,17 @@ data: Wed Mar 19 2025 15:53:40 GMT+0800
 等待加载完成就可以愉快地使用了!
 
 ![use](/image/studio/3.webp)
+
+nuxt studio 有即时预览的功能, 只需要在`nuxt.config.ts`添加链接即可.
+
+```typescript
+export default defineNuxtConfig({
+    content: {
+        preview: {
+            api: "https://api.nuxt.studio",
+        },
+    },
+});
+```
+
+推送到 GitHub 等待托管服务build完成打开[nuxt.studio](https://nuxt.studio/)就能看到左上角有个preview的按钮了.
