@@ -17,7 +17,12 @@ const colorMode = useColorMode();
 
 const handleTheme = (mode: string): void => {
     colorMode.preference = mode;
-}
+};
+
+onMounted(() => {
+    const element: HTMLElement = document.documentElement;
+    element.classList.add(colorMode.value);
+});
 </script>
 
 <style lang="scss" scoped>
@@ -33,7 +38,7 @@ const handleTheme = (mode: string): void => {
         justify-content: center;
         border: 1px solid var(--border-color);
         border-radius: 4px;
-        transition: .2s;
+        transition: 0.2s;
         cursor: pointer;
 
         .icon {

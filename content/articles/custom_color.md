@@ -17,6 +17,7 @@ PinkLine 默认的主题色为粉色`#d9908e`, 如果你不喜欢可以修改`/a
     --font-color: rgba(0, 0, 0, 0.8);   // 字体颜色
     --border-color: #000000bd;          // 边框颜色
     --backgrond-color1: #0000002d;      // 背景颜色1
+    --code-background: #f8f8f8;         // 代码高亮背景色
 }
 // 暗黑模式
 .dark-mode body {
@@ -24,6 +25,7 @@ PinkLine 默认的主题色为粉色`#d9908e`, 如果你不喜欢可以修改`/a
     --font-color: #ffffff;              // 字体颜色
     --border-color: #ffffffbd;          // 边框颜色
     --backgrond-color1: #ffffff2d;      // 背景颜色1
+    --code-background: #171514;         // 代码高亮背景色
 }
 
 .light-mode {
