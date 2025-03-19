@@ -15,4 +15,10 @@ export default defineNuxtConfig({
             routes: ["/rss.xml"],
         },
     },
+
+    content: {
+        preview: {
+            api: "https://api.nuxt.studio",
+        },
+    },
 });
