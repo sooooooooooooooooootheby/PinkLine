@@ -1,27 +1,44 @@
 # PinkLine
 
-![sotheby](https://raw.githubusercontent.com/sooooooooooooooooootheby/PinkLine/refs/heads/main/public/logo_MG.gif)
+欢迎来到 PinkLine. 🎉
 
-名字来源于苏芙比的新春皮肤红线缘，没有其他意义，单纯喜欢❤️
+PinkLine 是一款基于 Nuxt.js 的个人博客模版, 其快速, 简约, 轻量. 🍂
 
----
+![Static Badge](https://img.shields.io/badge/PinkLine-v1.0.0-%23d9908e)
+![Static Badge](https://img.shields.io/badge/Nuxt.js-v1.0.0-%2364D88A?logo=nuxt)
+![Static Badge](https://img.shields.io/badge/sass-v1.85.1-%23B14A7E?logo=sass)
 
-基于nuxt.js
+[在线演示](https://pinkline.s22y.moe/) ｜ [使用说明](https://pinkline.s22y.moe/article)
 
-- 服务器渲染，加速客户端加载速度，SEO友好
+## 特色
 
-- 丰富的插件市场，避免重复造轮子
+- 基于 Nuxt.js
+- 强大的CMS: @nuxt/content
+- SEO友好
+- 响应式布局
+- 明暗模式
+- 文章搜索
+- 评论系统
 
-- 自动导入，自动配置，简化开发流程，提高效率
+## 部署
 
-使用@nuxt/content作为CMS
+本地部署
 
-- 基于文件的内容管理系统，使用Markdown、YAML、CSV 或 JSON存放内容。
+``` bash
+git clone https://github.com/sooooooooooooooooootheby/PinkLine
 
-- Markdown 内嵌vue
+cd PinkLine
 
-- 集成shiki
+npm i
 
-- 官方自带可视化编辑器 nuxt studio ，有浏览器就能轻松管理内容
+npm run dev
+```
 
-- 随处部署，@nuxt/content可以在所有托管服务提供商、静态、服务器、无服务器和边缘部署
+通过托管服务
+
+<a href="https://vercel.com/new/clone?repository-url=https://github.com/sooooooooooooooooootheby/PinkLine" target="_blank">
+<img src="https://vercel.com/button" style="width: auto; height: 32px">
+</a>
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/sooooooooooooooooootheby/PinkLine" target="_blank">
+<img src="https://www.netlify.com/img/deploy/button.svg" style="width: auto; height: 32px">
+</a>
