@@ -6,7 +6,7 @@
                 <p>{{ handleTime(article.data) }}</p>
                 <ContentRenderer :value="article" />
             </div>
-            <div style="margin-top: 64px"  v-if="appConfig.comment.isComment">
+            <div style="margin-top: 64px" v-if="appConfig.comment.isComment">
                 <ClientOnly>
                     <waline />
                 </ClientOnly>
@@ -23,6 +23,9 @@
 </template>
 
 <script lang="ts" setup>
+import { createApp, h } from 'vue';
+import CopyCodeButton from '~/components/CopyCodeButton.vue';
+
 const appConfig = useAppConfig();
 const route = useRoute();
 
@@ -34,6 +37,25 @@ useSeoMeta({
     title: `${article.value.title} | s22y`,
     ogTitle: `${article.value.title} | s22y`,
     description: article.value.description,
+});
+
+onMounted(() => {
+    const preElements: NodeListOf<HTMLPreElement> = document.querySelectorAll("pre");
+    preElements.forEach((pre) => {
+        pre.style.position = 'relative';
+        const code: any = pre.textContent;
+        const button = document.createElement("div");
+        const app = createApp({
+            render() {
+                return h(CopyCodeButton, { code });
+            },
+        });
+        app.mount(button);
+        button.style.position = 'absolute';
+        button.style.top = '10px';
+        button.style.right = '10px';
+        pre.appendChild(button);
+    });
 });
 </script>
 
