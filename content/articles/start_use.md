@@ -1,7 +1,14 @@
 ---
 title: 开始使用 PinkLine
-data: Wed Mar 19 2025 15:53:46 GMT+0800
+date: Wed Mar 19 2025 15:53:46 GMT+0800
+update: Wed Mar 20 2025 18:53:46 GMT+0800
+tag: ["use"]
+sort: use
 ---
+
+欢迎使用PinkLine~
+
+<!-- more -->
 
 如果你使用 vercel 或者 netlify 可以直接点击下面的按钮一键部署.
 

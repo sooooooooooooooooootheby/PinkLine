@@ -1,6 +1,8 @@
 ---
 title: 评论系统
-data: Wed Mar 19 2025 15:53:43 GMT+0800
+date: Wed Mar 10 2025 15:53:43 GMT+0800
+tag: ["comment", "system"]
+sort: function
 ---
 
 PinkLine 使用的是 Waline 评论系统, 所以需要使用请修改`/app.config.ts`的配置内容.

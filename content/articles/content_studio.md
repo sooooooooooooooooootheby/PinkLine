@@ -1,6 +1,8 @@
 ---
 title: 使用nuxt studio管理内容
-data: Wed Mar 19 2025 15:53:40 GMT+0800
+date: Wed Mar 1 2025 15:53:40 GMT+0800
+tag: ["后台", "nuxt studio"]
+sort: manage
 ---
 
 当我们需要写文章的时候要用在手机或者电脑上面写出来, 然后放到`/content/articles`或者`/content/notes`里面, 再推到 Github 上, 这很不健康. 所以我们可以使用 nuxt studio, 这是一个 nuxt 的内容管理工具.

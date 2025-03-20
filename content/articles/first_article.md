@@ -1,6 +1,9 @@
 ---
 title: 你的第一篇文章
-data: Wed Mar 19 2025 15:53:45 GMT+0800
+date: Wed Mar 19 2025 15:53:45 GMT+0800
+update: Wed Mar 20 2025 16:53:46 GMT+0800
+tag: ["first", "article"]
+sort: use
 ---
 
 如果你需要写一篇文章, 只需要在`/content/articles`下新建一个`.md`文件, 如果你想写一个随记, 只需要在`/content/notes`下新建一个`.md`文件
@@ -17,11 +20,18 @@ Frontmatter是基于Markdown的CMS的一种约定，为页面提供元数据，�
 
 - `title`: 文章的标题
 
-- `data`: 文章的时间(我知道这个该死的data不是时间的意思, 这是拼写错误, 但是我不想修改了, 修改它有些许麻烦)
+- ~~`data`: 文章的时间(我知道这个该死的data不是时间的意思, 这是拼写错误, 但是我不想修改了, 修改它有些许麻烦)~~(已经在v1.0.1修正了)
+- `date`: 文章的时间
 
     文章时间支持多种格式的时间戳, 只要是js支持的都可以(大概)
 
+- `update`: 文章的更新时间 (v1.0.1加入)
+
 - `description`: 文章的描述
+
+- `tag`: 标签, 以数组的形式存放 (v1.0.1加入)
+
+- `sort`: 分类 (v1.0.1加入)
 
 Frontmatter需要使用Syntax, 也就是`---`去声明.
 
@@ -29,12 +39,15 @@ Frontmatter需要使用Syntax, 也就是`---`去声明.
 
 ``` markdown
 ---
-title: 你的第一篇文章
-data: Wed Mar 19 2025 15:53:45 GMT+0800
+title: 开始使用 PinkLine
+date: Wed Mar 19 2025 15:53:46 GMT+0800
+update: Wed Mar 20 2025 18:53:46 GMT+0800
+tag: ["use"]
+sort: use
 ---
 ```
 
-关于随记, 你只需要插入`data`, 和文章一样的插入方式.
+关于随记, 你只需要插入`date`, 和文章一样的插入方式.
 
 ## 图片
 

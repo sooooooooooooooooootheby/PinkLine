@@ -4,7 +4,7 @@
         <ul class="note">
             <li class="item mark" v-for="item in note" :key="item.id">
                 <ContentRenderer :value="item" />
-                <p>{{ handleTime(item.data) }}</p>
+                <p>{{ handleTime(item.date) }}</p>
             </li>
         </ul>
     </div>
@@ -20,7 +20,7 @@ useSeoMeta({
 
 const { data: note } = await(async () => {
     return await useAsyncData("note", () => {
-        return queryCollection("notes").select("data", "body").order("data", "DESC").all();
+        return queryCollection("notes").select("date", "body").order("date", "DESC").all();
     });
 })();
 </script>

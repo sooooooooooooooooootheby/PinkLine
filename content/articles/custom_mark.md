@@ -1,6 +1,8 @@
 ---
 title: 自定义主题--修改文章排版
-data: Wed Mar 19 2025 15:53:43 GMT+0800
+date: Wed Mar 19 2025 15:53:43 GMT+0800
+tag: ["articles", "display"]
+sort: custom
 ---
 
 PinkLine 使用的排版 css 是少数派的 css, 文件位于`/assets/sspai.scss`.

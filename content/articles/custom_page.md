@@ -1,6 +1,8 @@
 ---
 title: 自定义主题--添加页面
-data: Wed Mar 19 2025 15:53:43 GMT+0800
+date: Wed Mar 19 2025 15:53:43 GMT+0800
+tag: ["pages", "add"]
+sort: custom
 ---
 
 如果你需要添加自定义页面, 需要在`/pages`下新建一个`.vue`文件, 这个文件就是你的页面文件.

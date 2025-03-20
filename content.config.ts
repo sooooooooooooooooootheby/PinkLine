@@ -11,14 +11,17 @@ export default defineContentConfig({
             source: "articles/*.md",
             schema: z.object({
                 description: z.string(),
-                data: z.date(),
+                date: z.date(),
+                update: z.date(),
+                tag: z.array(z.string()),
+                sort: z.string(),
             }),
         }),
         notes: defineCollection({
             type: "page",
             source: "notes/*.md",
             schema: z.object({
-                data: z.date(),
+                date: z.date(),
             })
         }),
     },

@@ -7,14 +7,14 @@
             <li class="item" :class="{ isActive: isPath(item.path) }" v-for="item in appConfig.page" :key="item.path">
                 <NuxtLink :to="item.path">{{ item.name }}</NuxtLink>
             </li>
-            <li class="item"><NuxtLink to="/rss.xml" target="_blank">rss</NuxtLink></li>
+            <li class="item"><a href="/rss.xml" target="_blank">rss</a></li>
         </ul>
         <ul class="navigate mobi">
             <li class="item" :class="{ isActive: isPath(item.path) }" v-for="item in appConfig.page" :key="item.path">
                 <NuxtLink :to="item.path"><Icon :name="item.icon" /></NuxtLink>
             </li>
             <li class="item">
-                <NuxtLink to="/rss.xml" target="_blank"><Icon name="akar-icons:rss" /></NuxtLink>
+                <a href="/rss.xml" target="_blank"><Icon name="akar-icons:rss" /></a>
             </li>
         </ul>
     </div>
