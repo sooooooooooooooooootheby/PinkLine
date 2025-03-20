@@ -8,7 +8,7 @@ export default defineNuxtConfig({
 
     modules: ["@nuxt/content", "@nuxtjs/color-mode", "@nuxt/icon", "nuxt-module-feed"],
 
-    css: ["~/assets/base.scss", "~/assets/theme.scss", "~/assets/sspai.scss", "~/assets/waline.css"],
+    css: ["~/assets/base.scss", "~/assets/theme.scss", "~/assets/sspai.scss", "~/assets/waline.scss"],
 
     nitro: {
         prerender: {
