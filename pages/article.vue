@@ -28,7 +28,9 @@
                     <span v-else>{{ handleTime(item.date) }}</span>
                 </div>
                 <div class="info">
-                    <span class="sort">#{{ item.sort }}</span>
+                    <NuxtLink :to="`/sort?sort=${item.sort}`" class="sort">
+                        <span>#{{ item.sort }}</span>
+                    </NuxtLink>
                     <ul class="tag">
                         <li class="tags" v-for="tags in item.tag" :key="tags">
                             <NuxtLink :to="`/tag?tag=${tags}`">{{ tags }}</NuxtLink>
@@ -177,6 +179,7 @@ const filteredSections = computed(() => {
 
                 .sort {
                     margin-right: 8px;
+                    color: var(--font-color);
                 }
                 .tag {
                     display: flex;
