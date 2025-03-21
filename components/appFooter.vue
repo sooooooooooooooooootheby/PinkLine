@@ -1,7 +1,7 @@
 <template>
     <div class="footer">
         <div class="info">
-            <div class="copyright">Copyright ©2023~2025.sooooooooooooooooootheby</div>
+            <div class="copyright">Copyright ©2025.sooooooooooooooooootheby</div>
             <a href="https://icp.gov.moe/?keyword=20250416" target="_blank" class="moeIcp">萌ICP备20250416号</a>
         </div>
         <theme />
