@@ -43,13 +43,13 @@ const appConfig = useAppConfig();
 const route = useRoute();
 
 const { data: article } = await useAsyncData(route.path, () => {
-    return queryCollection("articles").path(route.path).select("title", "date", "update", "body", "sort", "tag").first();
+    return queryCollection("articles").path(route.path).select("title", "date", "update", "body", "sort", "tag", "description").first();
 });
 
 useSeoMeta({
-    title: `${article.value.title} | s22y`,
-    ogTitle: `${article.value.title} | s22y`,
-    description: article.value.description,
+    title: `${article.value?.title} | s22y`,
+    ogTitle: `${article.value?.title} | s22y`,
+    description: article.value?.description,
 });
 
 onMounted(() => {
