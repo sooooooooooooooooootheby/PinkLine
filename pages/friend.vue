@@ -11,7 +11,7 @@
                 </li>
             </ul>
             <p v-else>博主还没有友链哦, 欢迎交换友链.</p>
-            <ContentRenderer :value="friend" />
+            <ContentRenderer v-if="friend" :value="friend" />
         </div>
         <clientOnly v-if="appConfig.comment.isComment">
             <waline />

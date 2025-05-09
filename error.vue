@@ -5,8 +5,8 @@
                 <appHeader />
             </div>
             <div class="page">
-                <h1>{{ error.statusCode }}</h1>
-                <p>{{ error.statusMessage }}</p>
+                <h1>{{ error?.statusCode }}</h1>
+                <p>{{ error?.statusMessage }}</p>
                 <pre>{{ error }}</pre>
             </div>
             <div class="foot">
@@ -26,8 +26,8 @@ const props = defineProps({
 const { error } = props;
 
 useSeoMeta({
-    title: error.statusCode + " | " + error.statusMessage,
-    ogTitle: error.statusCode + " | " + error.statusMessage,
+    title: `${error?.statusCode} | ${error?.statusMessage}`,
+    ogTitle: `${error?.statusCode} | ${error?.statusMessage}`,
 });
 </script>
 

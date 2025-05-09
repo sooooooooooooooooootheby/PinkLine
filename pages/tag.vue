@@ -30,37 +30,48 @@
 <script lang="ts" setup>
 const route = useRoute();
 
+interface tags {
+    title: string;
+    description: string;
+    path: string;
+    tag: Array<string>;
+}
+
+// 获取所有的标签
 const { data: tag } = await useAsyncData("tag", () => {
     return queryCollection("articles").select("tag").all();
 });
 
+// 处理标签
 const uniqueTags = computed(() => {
-    const tags = tag.value.flatMap((item: { tag: string }) => item.tag);
+    const tags = tag.value?.flatMap((item: { tag: string[] }) => item.tag);
     return [...new Set(tags)];
 });
 
 // 这是查询的部分
 const searchQuery = ref<string>("");
-const searchResult = ref<Array<any>>([]);
+const searchResult = ref<Array<tags>>();
 
 const { data: list } = await useAsyncData("list", () => {
     return queryCollection("articles").select("title", "description", "path", "tag").all();
 });
 
 const queryTag = (tag: string) => {
-    return (searchResult.value = list.value.filter((item: { tag: string[] }) => item.tag.includes(tag)));
+    return list.value?.filter((item: { tag: string[] }) => item.tag.includes(tag));
 };
 
-if (route.query.tag) {
-    searchQuery.value = route.query.tag;
-    searchResult.value = queryTag(route.query.tag);
-}
-
 const selectTag = async (tag: string) => {
-    searchQuery.value = route.query.tag;
     await navigateTo(`/tag?tag=${tag}`);
     searchResult.value = queryTag(tag);
 };
+
+onMounted(() => {
+    const tag = route.query.tag;
+    if (typeof tag === "string") {
+        searchQuery.value = tag;
+        searchResult.value = queryTag(tag);
+    }
+});
 </script>
 
 <style lang="scss" scoped>

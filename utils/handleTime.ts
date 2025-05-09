@@ -1,4 +1,4 @@
-export default function (timestamp: string) {
+export default function (timestamp: Date) {
     const today: Date = new Date();
     const date: Date = new Date(timestamp);
 

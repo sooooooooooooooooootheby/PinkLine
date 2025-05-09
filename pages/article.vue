@@ -1,14 +1,14 @@
 <template>
     <div class="blog">
         <h1>这些是我的宝藏</h1>
-        <p class="count" v-if="searchQuery">总共有 {{ filteredSections.length }} 篇文章</p>
+        <p class="count" v-if="searchQuery">总共有 {{ filteredSections??[].length }} 篇文章</p>
         <p class="count" v-else>查询到 {{ count }} 篇文章</p>
         <div class="search">
             <div class="bar">
                 <input placeholder="Search this page..." type="text" name="text" class="input" v-model="searchQuery" />
             </div>
             <div class="res" v-if="searchQuery">
-                <ul v-if="filteredSections.length > 0">
+                <ul v-if="(filteredSections ?? []).length > 0">
                     <li class="item" v-for="item in filteredSections" :key="item.id">
                         <NuxtLink :to="item.id" class="title">
                             <h2>{{ item.title }}</h2>
@@ -20,7 +20,7 @@
             </div>
         </div>
         <ul class="list" v-if="!searchQuery">
-            <li class="item" v-for="item in list" :key="item.id">
+            <li class="item" v-for="item in list">
                 <h2>{{ item.title }}</h2>
                 <p class="description">{{ item.description }}</p>
                 <div class="time">
@@ -75,14 +75,14 @@ const { data: sections } = await useAsyncData("search-sections", () => {
 });
 
 interface Section {
-    id: number;
+    id: string;
     title: string;
     content: string;
 }
 
 const filteredSections = computed(() => {
     const query = searchQuery.value.toLowerCase();
-    return sections.value.filter((section: Section) => {
+    return sections.value?.filter((section: Section) => {
         return section.title.toLowerCase().includes(query) || section.content.toLowerCase().includes(query);
     });
 });

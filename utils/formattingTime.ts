@@ -1,4 +1,4 @@
-export default function (timestamp: string) {
+export default function (timestamp: Date) {
     const date: Date = new Date(timestamp);
     const year: number = date.getFullYear();
     const month: number = date.getMonth() + 1;

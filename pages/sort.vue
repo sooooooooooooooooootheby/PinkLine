@@ -26,37 +26,46 @@
 <script lang="ts" setup>
 const route = useRoute();
 
+interface tags {
+    title: string;
+    description: string;
+    path: string;
+    tag: Array<string>;
+}
+
 const { data: sort } = await useAsyncData("sort", () => {
     return queryCollection("articles").select("sort").all();
 });
 
 const uniqueTags = computed(() => {
-    const sorts = sort.value.flatMap((item: { sort: string }) => item.sort);
+    const sorts = sort.value?.flatMap((item: { sort: string }) => item.sort);
     return [...new Set(sorts)];
 });
 
 // 这是查询的部分
 const searchQuery = ref<string>("");
-const searchResult = ref<Array<any>>([]);
+const searchResult = ref<Array<tags>>();
 
 const { data: list } = await useAsyncData("list", () => {
     return queryCollection("articles").select("title", "description", "path", "sort").all();
 });
 
-const queryTag = (sort: string) => {
-    return (searchResult.value = list.value.filter((item: { sort: string[] }) => item.sort.includes(sort)));
+const queryTag = (tag: string) => {
+    return list.value?.filter((item: { tag: string[] }) => item.tag.includes(tag));
 };
 
-if (route.query.sort) {
-    searchQuery.value = route.query.sort;
-    searchResult.value = queryTag(route.query.sort);
-}
-
-const selectTag = async (sort: string) => {
-    searchQuery.value = route.query.sort;
-    await navigateTo(`/sort?sort=${sort}`);
-    searchResult.value = queryTag(sort);
+const selectTag = async (tag: string) => {
+    await navigateTo(`/tag?tag=${tag}`);
+    searchResult.value = queryTag(tag);
 };
+
+onMounted(() => {
+    const tag = route.query.tag;
+    if (typeof tag === "string") {
+        searchQuery.value = tag;
+        searchResult.value = queryTag(tag);
+    }
+});
 </script>
 
 <style lang="scss" scoped>
