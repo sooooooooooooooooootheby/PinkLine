@@ -2,7 +2,7 @@
     <div class="blog">
         <h1>这些是我的宝藏</h1>
         <p class="count" v-if="searchQuery">总共有 {{ filteredSections??[].length }} 篇文章</p>
-        <p class="count" v-else>查询到 {{ count }} 篇文章</p>
+        <p class="count" v-else>查询到 {{ list?.length ?? 0 }} 篇文章</p>
         <div class="search">
             <div class="bar">
                 <input placeholder="Search this page..." type="text" name="text" class="input" v-model="searchQuery" />
@@ -61,10 +61,6 @@ const { data: list } = await useAsyncData("list", () => {
         .order("update", "DESC")
         .order("date", "DESC")
         .all();
-});
-
-const { data: count } = await useAsyncData("count", () => {
-    return queryCollection("articles").count();
 });
 
 // 这是查询的部分
