@@ -37,7 +37,7 @@ interface tags {
 }
 
 // 获取所有的标签
-const { data: tag } = await useAsyncData("tag", () => {
+const { data: tag } = await useAsyncData("taglist", () => {
     return queryCollection("articles").select("tag").all();
 });
 

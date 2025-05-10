@@ -46,7 +46,7 @@ const uniqueSorts = computed(() => {
 const searchQuery = ref<string>("");
 const searchResult = ref<Array<sorts>>();
 
-const { data: list } = await useAsyncData("list", () => {
+const { data: list } = await useAsyncData("sortlist", () => {
     return queryCollection("articles").select("title", "description", "path", "sort", "tag").all();
 });
 
