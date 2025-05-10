@@ -30,6 +30,7 @@ interface tags {
     title: string;
     description: string;
     path: string;
+    sort: string;
     tag: Array<string>;
 }
 
@@ -47,11 +48,11 @@ const searchQuery = ref<string>("");
 const searchResult = ref<Array<tags>>();
 
 const { data: list } = await useAsyncData("list", () => {
-    return queryCollection("articles").select("title", "description", "path", "sort").all();
+    return queryCollection("articles").select("title", "description", "path", "sort", "tag").all();
 });
 
 const queryTag = (tag: string) => {
-    return list.value?.filter((item: { tag: string[] }) => item.tag.includes(tag));
+    return list.value?.filter((item: tags) => item.tag.includes(tag)) as tags[];
 };
 
 const selectTag = async (tag: string) => {
