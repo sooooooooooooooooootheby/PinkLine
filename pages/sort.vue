@@ -2,10 +2,10 @@
     <div>
         <ul class="flex flex-wrap mb-12">
             <li
-                v-for="sorts in uniqueTags"
+                v-for="sorts in uniqueSorts"
                 class="py-0.5 px-2 m-1 bg-pinkline-50 rounded-lg cursor-pointer"
-                :class="{ 'bg-pinkline-100': route.query.tag === sorts }"
-                @click="selectTag(sorts)"
+                :class="{ 'bg-pinkline-100': route.query.sort === sorts }"
+                @click="selectSort(sorts)"
             >
                 {{ sorts }}
             </li>
@@ -25,7 +25,7 @@
 <script lang="ts" setup>
 const route = useRoute();
 
-interface tags {
+interface sorts {
     title: string;
     description: string;
     path: string;
@@ -33,37 +33,37 @@ interface tags {
     tag: Array<string>;
 }
 
-const { data: sort } = await useAsyncData("sort", () => {
+const { data: sortData } = await useAsyncData("sort", () => {
     return queryCollection("articles").select("sort").all();
 });
 
-const uniqueTags = computed(() => {
-    const sorts = sort.value?.flatMap((item: { sort: string }) => item.sort);
+const uniqueSorts = computed(() => {
+    const sorts = sortData.value?.flatMap((item: { sort: string }) => item.sort);
     return [...new Set(sorts)];
 });
 
 // 这是查询的部分
 const searchQuery = ref<string>("");
-const searchResult = ref<Array<tags>>();
+const searchResult = ref<Array<sorts>>();
 
 const { data: list } = await useAsyncData("list", () => {
     return queryCollection("articles").select("title", "description", "path", "sort", "tag").all();
 });
 
-const queryTag = (tag: string) => {
-    return list.value?.filter((item: tags) => item.tag.includes(tag)) as tags[];
+const querySort = (sort: string) => {
+    return list.value?.filter((item: sorts) => item.sort === sort) as sorts[];
 };
 
-const selectTag = async (tag: string) => {
-    await navigateTo(`/sort?tag=${tag}`);
-    searchResult.value = queryTag(tag);
+const selectSort = async (sort: string) => {
+    await navigateTo(`/sort?sort=${sort}`);
+    searchResult.value = querySort(sort);
 };
 
 onMounted(() => {
-    const tag = route.query.tag;
-    if (typeof tag === "string") {
-        searchQuery.value = tag;
-        searchResult.value = queryTag(tag);
+    const sort = route.query.sort;
+    if (typeof sort === "string") {
+        searchQuery.value = sort;
+        searchResult.value = querySort(sort);
     }
 });
 </script>
