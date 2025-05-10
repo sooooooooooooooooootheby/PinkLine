@@ -1,22 +1,27 @@
 <template>
-    <div class="friend">
-        <div class="mark">
-            <h1>来自互联网的朋友</h1>
-            <ul class="list" v-if="appConfig.friend.length">
-                <li class="item" v-for="item in appConfig.friend" :key="item.name">
-                    <a :href="item.url" target="_block">
-                        <img :src="item.image" alt="image" />
-                        <span class="name">{{ item.name }}</span>
-                    </a>
-                </li>
-            </ul>
-            <p v-else>博主还没有友链哦, 欢迎交换友链.</p>
+    <div>
+        <h1 class="text-3xl font-bold mb-10">来自互联网的朋友</h1>
+        <ul v-if="appConfig.friend.length" class="mb-8">
+            <li v-for="item in appConfig.friend">
+                <a :href="item.url" target="_block">
+                    <div class="flex items-center p-2 border border-gray-400 rounded-lg hover:shadow-lg duration-300">
+                        <img :src="item.image" alt="image" class="size-14 rounded-lg mr-2 lg:size-10" />
+                        <div class="flex flex-col justify-center">
+                            <span class="text-lg font-bold">{{ item.name }}</span>
+                            <span class="text-sm text-gray-600">{{ item.info }}</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <p v-else>博主还没有友链哦, 欢迎交换友链.</p>
+        <div class="prose prose-sm sm:prose-base dark:prose-invert">
             <ContentRenderer v-if="friend" :value="friend" />
         </div>
-        <clientOnly v-if="appConfig.comment.isComment">
-            <waline />
-        </clientOnly>
     </div>
+    <clientOnly v-if="appConfig.comment.isComment">
+        <waline />
+    </clientOnly>
 </template>
 
 <script lang="ts" setup>
@@ -32,57 +37,3 @@ const { data: friend } = await useAsyncData(route.path, () => {
     return queryCollection("content").path("/page/friend").first();
 });
 </script>
-
-<style lang="scss" scoped>
-.friend {
-    .list {
-        padding: 0;
-        margin-bottom: 12px;
-        display: flex;
-        flex-wrap: wrap;
-
-        .item {
-            width: 64px;
-            margin: 8px 16px;
-            list-style: none;
-            transition: 0.2s;
-
-            a {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                position: relative;
-
-                img {
-                    width: 64px;
-                    height: 64px;
-                    object-fit: cover;
-                    margin: 0;
-                }
-                .name {
-                    padding: 2px 14px;
-                    opacity: 0;
-                    z-index: 2;
-                    transition: .2s;
-                    background-color: #fff;
-                    border-radius: 4px;
-                    position: absolute;
-                    bottom: 0;
-                }
-            }
-        }
-        .item:hover {
-            scale: 1.1;
-            z-index: 99;
-
-            a {
-                .name {
-                    margin: 0;
-                    opacity: 1;
-                    bottom: -34px;
-                }
-            }
-        }
-    }
-}
-</style>

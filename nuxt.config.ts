@@ -1,3 +1,5 @@
+import tailwindcss from "@tailwindcss/vite";
+
 export default defineNuxtConfig({
     compatibilityDate: "2024-11-01",
     devtools: { enabled: true },
@@ -6,9 +8,9 @@ export default defineNuxtConfig({
         pageTransition: { name: "page", mode: "out-in" },
     },
 
-    modules: ["@nuxt/content", "@nuxtjs/color-mode", "@nuxt/icon", "nuxt-module-feed"],
+    modules: ["@nuxt/content", "@nuxt/icon", "nuxt-module-feed"],
 
-    css: ["~/assets/base.scss", "~/assets/theme.scss", "~/assets/sspai.scss", "~/assets/waline.scss"],
+    css: ["~/assets/base.css", "~/assets/waline.scss"],
 
     nitro: {
         prerender: {
@@ -20,5 +22,16 @@ export default defineNuxtConfig({
         preview: {
             api: "https://api.nuxt.studio",
         },
+        build: {
+            markdown: {
+                highlight: {
+                    theme: "catppuccin-frappe",
+                },
+            },
+        },
+    },
+
+    vite: {
+        plugins: [tailwindcss()],
     },
 });

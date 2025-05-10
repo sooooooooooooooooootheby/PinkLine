@@ -1,10 +1,10 @@
 <template>
     <div>
-        <h1 class="title">日常记录</h1>
-        <ul class="note">
-            <li class="item mark" v-for="item in note" :key="item.id">
+        <h1 class="text-3xl font-bold mb-10">日常记录</h1>
+        <ul>
+            <li v-for="item in note" class="mb-8">
                 <ContentRenderer :value="item" />
-                <p>{{ handleTime(item.date) }}</p>
+                <p class="text-gray-600 text-xs mt-1">{{ handleTime(item.date) }}</p>
             </li>
         </ul>
     </div>
@@ -24,19 +24,3 @@ const { data: note } = await(async () => {
     });
 })();
 </script>
-
-<style lang="scss" scoped>
-.title {
-    margin-bottom: 48px;
-}
-.note {
-    .item {
-        margin-bottom: 42px;
-        list-style: none;
-        border-bottom: 1px solid var(--border-color);
-    }
-    .item:last-child {
-        border-bottom: none;
-    }
-}
-</style>

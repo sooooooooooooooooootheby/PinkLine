@@ -1,30 +1,27 @@
 <template>
-    <div class="tag">
-        <ul class="list">
-            <li
-                v-for="tags in uniqueTags"
-                :key="tags"
-                class="item"
-                :class="{ isActive: tags === route.query.tag }"
-                @click="selectTag(tags)"
-            >
-                {{ tags }}
-            </li>
-        </ul>
-        <ul v-if="searchResult" class="searchResultList">
-            <li v-for="item in searchResult" :key="item.path" class="searchResultItem">
-                <NuxtLink :to="item.path">
-                    <h2>{{ item.title }}</h2>
-                </NuxtLink>
-                <p class="description">{{ item.description }}</p>
-                <ul class="searchTagsList">
-                    <li class="searchTagsItem" :class="{ isActive: tags === searchQuery }" v-for="tags in item.tag" :key="tags">
-                        {{ tags }}
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+    <ul class="flex flex-wrap mb-12">
+        <li
+            v-for="tags in uniqueTags"
+            class="py-0.5 px-2 m-1 bg-pinkline-50 rounded-lg cursor-pointer"
+            :class="{ 'bg-pinkline-100': route.query.tag === tags }"
+            @click="selectTag(tags)"
+        >
+            {{ tags }}
+        </li>
+    </ul>
+    <ul v-if="searchResult">
+        <li v-for="item in searchResult" class="mb-8">
+            <NuxtLink :to="item.path">
+                <h2 class="text-xl font-bold">{{ item.title }}</h2>
+                <p class="text-sm text-gray-700 my-2">{{ item.description }}</p>
+            </NuxtLink>
+            <ul class="flex">
+                <li v-for="tags in item.tag" class="text-sm text-gray-600 mr-1">
+                    {{ tags }}
+                </li>
+            </ul>
+        </li>
+    </ul>
 </template>
 
 <script lang="ts" setup>
@@ -73,73 +70,3 @@ onMounted(() => {
     }
 });
 </script>
-
-<style lang="scss" scoped>
-.tag {
-    .list {
-        display: flex;
-        flex-wrap: wrap;
-
-        .item {
-            list-style: none;
-            position: relative;
-            top: 0;
-            margin: 6px;
-            padding: 4px 6px;
-            border: 1.5px solid var(--theme-color);
-            border-radius: 6px;
-            font-size: 15px;
-            transition: 0.2s;
-            cursor: pointer;
-        }
-        .item:hover {
-            top: -4px;
-            animation: moveUpDown 0.5s infinite alternate;
-        }
-        @keyframes moveUpDown {
-            0% {
-                top: -2px;
-            }
-            100% {
-                top: -4px;
-            }
-        }
-        .isActive {
-            background-color: var(--theme-color-hover);
-        }
-    }
-    .searchResultList {
-        margin-top: 32px;
-
-        .searchResultItem {
-            margin-bottom: 24px;
-            list-style: none;
-
-            a {
-                color: var(--font-color);
-                text-decoration: none;
-                transition: 0.2s;
-            }
-            a:hover {
-                color: var(--theme-color);
-            }
-            .description {
-                opacity: 0.8;
-            }
-            .searchTagsList {
-                display: flex;
-
-                .searchTagsItem {
-                    margin-right: 6px;
-                    list-style: none;
-                    opacity: 0.6;
-                }
-                .isActive {
-                    opacity: 1;
-                    color: var(--theme-color);
-                }
-            }
-        }
-    }
-}
-</style>

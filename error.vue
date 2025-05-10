@@ -31,7 +31,7 @@ useSeoMeta({
 });
 </script>
 
-<style lang="scss" scoped>
+<!-- <style lang="scss" scoped>
 .main {
     .head {
         width: 600px;
@@ -52,4 +52,4 @@ useSeoMeta({
         margin: 0 auto;
     }
 }
-</style>
+</style> -->

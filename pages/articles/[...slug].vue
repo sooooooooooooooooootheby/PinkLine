@@ -1,24 +1,32 @@
 <template>
     <div>
         <template v-if="article">
-            <div class="back" @click="navigateTo('/article')">
-                <Icon class="icon" name="akar-icons:arrow-back" />
-                <span>回到文章列表</span>
+            <div class="text-gray-600">
+                <NuxtLink to="/article">
+                    <Icon name="akar-icons:arrow-back" class="mr-1 text-xs" />
+                    <span class="text-sm">回到文章列表</span>
+                </NuxtLink>
             </div>
-            <div class="mark">
-                <h1>{{ article.title }}</h1>
-                <div class="time">
-                    <span>于{{ formattingTime(article.date) }}发布</span>
-                    <span v-if="article.update">于{{ formattingTime(article.update) }}更新</span>
+            <article>
+                <h1 class="text-3xl font-bold my-4">{{ article.title }}</h1>
+                <div class="text-sm text-gray-600">
+                    <span v-if="article.update" class="flex items-center">
+                        {{ formattingTime(article.update) }}
+                        <Icon name="mynaui:edit" class="ml-1" />
+                    </span>
+                    <span v-else>{{ formattingTime(article.date) }}</span>
                 </div>
-                <div class="info">
-                    <span class="sort">#{{ article.sort }}</span>
-                    <ul class="tag">
-                        <li class="tags" v-for="tags in article.tag" :key="tags">{{ tags }}</li>
+                <div class="text-sm text-gray-600 flex items-center">
+                    <span>#{{ article.sort }}</span>
+                    <span class="mx-1">·</span>
+                    <ul class="flex">
+                        <li v-for="tags in article.tag" class="mr-1">{{ tags }}</li>
                     </ul>
                 </div>
-                <ContentRenderer :value="article" />
-            </div>
+                <div class="prose prose-sm sm:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl dark:prose-invert">
+                    <ContentRenderer :value="article" />
+                </div>
+            </article>
             <div style="margin-top: 64px" v-if="appConfig.comment.isComment">
                 <ClientOnly>
                     <waline />
@@ -26,10 +34,11 @@
             </div>
         </template>
         <template v-else>
-            <div class="empty-page">
-                <h1>Page Not Found</h1>
-                <p>Oops! The content you're looking for doesn't exist.</p>
-                <NuxtLink to="/">Go back home</NuxtLink>
+            <div>
+                <h1 class="text-center text-xl font-bold mb-2">哦😯, 看起来我们没有找到你需要的文章.</h1>
+                <NuxtLink to="/article">
+                    <p class="text-center underline">回到文章列表</p>
+                </NuxtLink>
             </div>
         </template>
     </div>
@@ -43,7 +52,10 @@ const appConfig = useAppConfig();
 const route = useRoute();
 
 const { data: article } = await useAsyncData(route.path, () => {
-    return queryCollection("articles").path(route.path).select("title", "date", "update", "body", "sort", "tag", "description").first();
+    return queryCollection("articles")
+        .path(route.path)
+        .select("title", "date", "update", "body", "sort", "tag", "description")
+        .first();
 });
 
 useSeoMeta({
@@ -71,56 +83,3 @@ onMounted(() => {
     });
 });
 </script>
-
-<style lang="scss" scoped>
-.back {
-    display: inline-block;
-    margin-top: -12px;
-    margin-bottom: 12px;
-    border-bottom: 1px solid var(--border-color);
-    cursor: pointer;
-
-    .icon {
-        font-size: 0.9rem;
-        margin-right: 4px;
-    }
-}
-.time {
-    opacity: 0.6;
-    font-size: 0.8rem;
-
-    span {
-        margin-right: 12px;
-    }
-}
-.info {
-    display: flex;
-    align-items: center;
-    font-size: 0.8rem;
-    opacity: 0.6;
-    margin-bottom: 24px;
-
-    .sort::after {
-        content: "/";
-        margin: 4px;
-    }
-    .tag {
-        display: flex;
-        margin: 0;
-        padding: 0;
-
-        .tags {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            margin-right: 4px;
-        }
-        .tags::after {
-            content: ",";
-        }
-        .tags:last-child::after {
-            content: "";
-        }
-    }
-}
-</style>

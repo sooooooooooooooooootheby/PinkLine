@@ -20,6 +20,7 @@ export default defineAppConfig({
     friend: [
         {
             name: "s22y",
+            info: "去码头整点薯条.",
             url: "https://blog.s22y.moe",
             image: "https://blog.s22y.moe/logo_MG.gif",
         },

@@ -1,20 +1,17 @@
 <template>
-    <div class="app">
-        <div class="main">
-            <div class="head">
-                <appHeader />
-            </div>
-            <div class="page">
-                <NuxtLoadingIndicator :color="color" :height="2" />
-                <NuxtLayout>
-                    <NuxtPage />
-                </NuxtLayout>
-            </div>
-            <div class="foot">
-                <appFooter />
-            </div>
+    <div class="lg:w-3xl lg:mx-auto">
+        <div class="p-6">
+            <appHeader />
         </div>
-        <div class="background"></div>
+        <div class="p-6 lg:p-8">
+            <NuxtLoadingIndicator :color="color" :height="2" />
+            <NuxtLayout>
+                <NuxtPage />
+            </NuxtLayout>
+        </div>
+        <div class="p-6">
+            <appFooter />
+        </div>
     </div>
 </template>
 
@@ -51,7 +48,7 @@ onMounted(() => {
 });
 </script>
 
-<style lang="scss" scoped>
+<!-- <style lang="scss" scoped>
 .app {
     .main {
         .head {
@@ -102,4 +99,4 @@ onMounted(() => {
         }
     }
 }
-</style>
+</style> -->
