@@ -1,25 +1,8 @@
 <template>
-    <h1 class="text-3xl font-bold mb-10">这些是我的宝藏</h1>
-    <!-- <input
-        placeholder="Search this page..."
-        type="text"
-        name="text"
-        v-model="searchQuery"
-        class="w-full text-gray-600 focus:outline-none p-2"
-    /> -->
-    <!-- <p class="text-sm text-gray-600" v-if="searchQuery">总共有 {{ filteredSections ?? [].length }} 篇文章</p>
-    <p class="text-sm text-gray-600" v-else>查询到 {{ list?.length ?? 0 }} 篇文章</p> -->
-    <!-- <div v-if="searchQuery">
-        <ul v-if="(filteredSections ?? []).length > 0">
-            <li v-for="item in filteredSections" :key="item.id">
-                <NuxtLink :to="item.id">
-                    <h2>{{ item.title }}</h2>
-                </NuxtLink>
-                <p>{{ item.content }}</p>
-            </li>
-        </ul>
-        <p v-else>没有找到文章哦～</p>
-    </div> -->
+    <h1 class="text-3xl font-bold">这些是我的宝藏</h1>
+    <div class="mb-6 mt-2">
+        <p class="text-sm text-gray-800">已经写了 {{ list?.length }} 篇文章了, 太棒了. </p>
+    </div>
     <ul>
         <li v-for="item in list" class="mb-8">
             <NuxtLink :to="item.path">
@@ -69,11 +52,4 @@ interface Section {
     title: string;
     content: string;
 }
-
-const filteredSections = computed(() => {
-    const query = searchQuery.value.toLowerCase();
-    return sections.value?.filter((section: Section) => {
-        return section.title.toLowerCase().includes(query) || section.content.toLowerCase().includes(query);
-    });
-});
 </script>
