@@ -1,5 +1,5 @@
 ---
-title: tailwind_typography
+title: tailwind_typography_en
 date: Wed Mar 19 2000 15:53:34 GMT+0800
 tag: ["content", "demo", "tailwind"]
 sort: demo
