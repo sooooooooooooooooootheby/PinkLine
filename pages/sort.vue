@@ -1,23 +1,25 @@
 <template>
-    <ul class="flex flex-wrap mb-12">
-        <li
-            v-for="sorts in uniqueTags"
-            class="py-0.5 px-2 m-1 bg-pinkline-50 rounded-lg cursor-pointer"
-            :class="{ 'bg-pinkline-100': route.query.tag === sorts }"
-            @click="selectTag(sorts)"
-        >
-            {{ sorts }}
-        </li>
-    </ul>
-    <ul v-if="searchResult">
-        <li v-for="item in searchResult" class="mb-8">
-            <NuxtLink :to="item.path">
-                <h2 class="text-xl font-bold">{{ item.title }}</h2>
-                <p class="text-sm text-gray-700 my-2">{{ item.description }}</p>
-            </NuxtLink>
-            <span class="text-sm text-gray-600">#{{ item.sort }}</span>
-        </li>
-    </ul>
+    <div>
+        <ul class="flex flex-wrap mb-12">
+            <li
+                v-for="sorts in uniqueTags"
+                class="py-0.5 px-2 m-1 bg-pinkline-50 rounded-lg cursor-pointer"
+                :class="{ 'bg-pinkline-100': route.query.tag === sorts }"
+                @click="selectTag(sorts)"
+            >
+                {{ sorts }}
+            </li>
+        </ul>
+        <ul v-if="searchResult">
+            <li v-for="item in searchResult" class="mb-8">
+                <NuxtLink :to="item.path">
+                    <h2 class="text-xl font-bold">{{ item.title }}</h2>
+                    <p class="text-sm text-gray-700 my-2">{{ item.description }}</p>
+                </NuxtLink>
+                <span class="text-sm text-gray-600">#{{ item.sort }}</span>
+            </li>
+        </ul>
+    </div>
 </template>
 
 <script lang="ts" setup>
