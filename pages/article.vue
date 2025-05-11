@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<h1 class="text-3xl font-bold dark:text-white">这些是我的宝藏</h1>
-		<div class="mt-2 mb-6">
+		<div class="mt-2 mb-10">
 			<p class="text-sm text-gray-800 dark:text-gray-300">已经写了 {{ list?.length }} 篇文章了, 太棒了.</p>
 		</div>
 		<ul>
