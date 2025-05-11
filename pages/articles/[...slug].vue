@@ -23,7 +23,7 @@
 						<li v-for="tags in article.tag" class="mr-1">{{ tags }}</li>
 					</ul>
 				</div>
-				<div class="prose prose-sm sm:prose-base lg:prose-lg xl:prose-xl 2xl:prose-2xl dark:prose-invert">
+				<div class="prose prose-sm sm:prose-base dark:prose-invert">
 					<ContentRenderer :value="article" />
 				</div>
 			</article>
