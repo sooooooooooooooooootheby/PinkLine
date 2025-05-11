@@ -1,33 +1,33 @@
 <template>
-    <div>
-        <div class="main">
-            <div class="head">
-                <appHeader />
-            </div>
-            <div class="page">
-                <h1>{{ error?.statusCode }}</h1>
-                <p>{{ error?.statusMessage }}</p>
-                <pre>{{ error }}</pre>
-            </div>
-            <div class="foot">
-                <appFooter />
-            </div>
-        </div>
-    </div>
+	<div>
+		<div class="main">
+			<div class="head">
+				<appHeader />
+			</div>
+			<div class="page">
+				<h1>{{ error?.statusCode }}</h1>
+				<p>{{ error?.statusMessage }}</p>
+				<pre>{{ error }}</pre>
+			</div>
+			<div class="foot">
+				<appFooter />
+			</div>
+		</div>
+	</div>
 </template>
 
 <script setup lang="ts">
 import type { NuxtError } from "#app";
 
 const props = defineProps({
-    error: Object as () => NuxtError,
+	error: Object as () => NuxtError,
 });
 
 const { error } = props;
 
 useSeoMeta({
-    title: `${error?.statusCode} | ${error?.statusMessage}`,
-    ogTitle: `${error?.statusCode} | ${error?.statusMessage}`,
+	title: `${error?.statusCode} | ${error?.statusMessage}`,
+	ogTitle: `${error?.statusCode} | ${error?.statusMessage}`,
 });
 </script>
 

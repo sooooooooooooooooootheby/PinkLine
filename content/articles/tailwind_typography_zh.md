@@ -24,16 +24,13 @@ It adds a new `prose` class that you can slap on any block of vanilla HTML conte
 
 ```html
 <article class="prose">
-    <h1>Garlic bread with cheese: What the science tells us</h1>
-    <p>
-        For years parents have espoused the health benefits of eating garlic bread with cheese to their children, with the food
-        earning such an iconic status in our culture that kids will often dress up as warm, cheesy loaf for Halloween.
-    </p>
-    <p>
-        But a recent study shows that the celebrated appetizer may be linked to a series of rabies cases springing up around the
-        country.
-    </p>
-    <!-- ... -->
+	<h1>Garlic bread with cheese: What the science tells us</h1>
+	<p>
+		For years parents have espoused the health benefits of eating garlic bread with cheese to their children, with the food earning such an iconic status in our culture that
+		kids will often dress up as warm, cheesy loaf for Halloween.
+	</p>
+	<p>But a recent study shows that the celebrated appetizer may be linked to a series of rabies cases springing up around the country.</p>
+	<!-- ... -->
 </article>
 ```
 
@@ -76,9 +73,9 @@ It's probably important that images look okay here by default as well:
 
 Now I'm going to show you an example of an unordered list to make sure that looks good, too:
 
--   So here is the first item in this list.
--   In this example we're keeping the items short.
--   Later, we'll use longer, more complex list items.
+- So here is the first item in this list.
+- In this example we're keeping the items short.
+- Later, we'll use longer, more complex list items.
 
 And that's the end of this section.
 
@@ -92,17 +89,17 @@ Sometimes you have headings directly underneath each other. In those cases you o
 
 When a heading comes after a paragraph, we need a bit more space, like I already mentioned above. Now let's see what a more complex list would look like.
 
--   **I often do this thing where list items have headings.**
+- **I often do this thing where list items have headings.**
 
     For some reason I think this looks cool which is unfortunate because it's pretty annoying to get the styles right.
 
     I often have two or three paragraphs in these list items, too, so the hard part is getting the spacing between the paragraphs, list item heading, and separate list items to all make sense. Pretty tough honestly, you could make a strong argument that you just shouldn't write this way.
 
--   **Since this is a list, I need at least two items.**
+- **Since this is a list, I need at least two items.**
 
     I explained what I'm doing already in the previous list item, but a list wouldn't be a list if it only had one item, and we really want this to look realistic. That's why I've added this second list item so I actually have something to look at when writing the styles.
 
--   **It's not a bad idea to add a third item either.**
+- **It's not a bad idea to add a third item either.**
 
     I think it probably would've been fine to just use two items but three is definitely not worse, and since I seem to be having no trouble making up arbitrary things to type, I might as well include it. I'm going to press <kbd>Enter</kbd> now.
 
@@ -116,12 +113,12 @@ Here's what a default `tailwind.config.js` file looks like at the time of writin
 
 ```js
 module.exports = {
-    purge: [],
-    theme: {
-        extend: {},
-    },
-    variants: {},
-    plugins: [],
+	purge: [],
+	theme: {
+		extend: {},
+	},
+	variants: {},
+	plugins: [],
 };
 ```
 
@@ -146,24 +143,24 @@ Nested lists basically always look bad which is why editors like Medium don't ev
 
 The most annoying thing about lists in Markdown is that `<li>` elements aren't given a child `<p>` tag unless there are multiple paragraphs in the list item. That means I have to worry about styling that annoying situation too.
 
--   **For example, here's another nested list.**
+- **For example, here's another nested list.**
 
     But this time with a second paragraph.
 
-    -   These list items won't have `<p>` tags
-    -   Because they are only one line each
+    - These list items won't have `<p>` tags
+    - Because they are only one line each
 
--   **But in this second top-level list item, they will.**
+- **But in this second top-level list item, they will.**
 
     This is especially annoying because of the spacing on this paragraph.
 
-    -   As you can see here, because I've added a second line, this list item now has a `<p>` tag.
+    - As you can see here, because I've added a second line, this list item now has a `<p>` tag.
 
         This is the second line I'm talking about by the way.
 
-    -   Finally here's another list item so it's more like a list.
+    - Finally here's another list item so it's more like a list.
 
--   A closing list item, but with no nested list, because why not?
+- A closing list item, but with no nested list, because why not?
 
 And finally a sentence to close off this section.
 

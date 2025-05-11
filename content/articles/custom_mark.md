@@ -30,19 +30,19 @@ css: ["~/assets/base.scss", "~/assets/theme.scss", "~/assets/sotheby.scss", "~/a
 ```scss
 // 默认的样式
 * {
-    margin: 0;
+	margin: 0;
 }
 body {
-    padding: 0;
+	padding: 0;
 }
 
 // 你需要手动嵌套一个 .mark 类
 .mark {
-    * {
-        margin: 0;
-    }
-    body {
-        padding: 0;
-    }
+	* {
+		margin: 0;
+	}
+	body {
+		padding: 0;
+	}
 }
 ```

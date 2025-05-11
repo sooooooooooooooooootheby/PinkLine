@@ -32,8 +32,8 @@ sort: custom
 
 <script lang="ts" setup>
 useSeoMeta({
-    title: "", // 标签标题
-    ogTitle: "", // og 标题
+	title: "", // 标签标题
+	ogTitle: "", // og 标题
 });
 </script>
 
@@ -50,18 +50,18 @@ useSeoMeta({
 
 ```vue
 <template>
-    <div class="index mark">
-        <ContentRenderer :value="page" />
-    </div>
+	<div class="index mark">
+		<ContentRenderer :value="page" />
+	</div>
 </template>
 
 <script lang="ts" setup>
 const route = useRoute();
 
 const { data: page } = await useAsyncData(route.path, () => {
-    return queryCollection("content")
-        .path("/page" + route.path)
-        .first();
+	return queryCollection("content")
+		.path("/page" + route.path)
+		.first();
 });
 </script>
 

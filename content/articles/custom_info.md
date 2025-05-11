@@ -7,7 +7,7 @@ sort: custom
 
 修改网站的标题,logo需要修改根目录下的`app.config.ts`.
 
-``` typescript
+```typescript
 info: {
     title: "",          // 网站标题
     author: "",         // 作者

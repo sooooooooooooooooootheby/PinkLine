@@ -35,11 +35,11 @@ nuxt studio 有即时预览的功能, 只需要在`nuxt.config.ts`添加链接�
 
 ```typescript
 export default defineNuxtConfig({
-    content: {
-        preview: {
-            api: "https://api.nuxt.studio",
-        },
-    },
+	content: {
+		preview: {
+			api: "https://api.nuxt.studio",
+		},
+	},
 });
 ```
 

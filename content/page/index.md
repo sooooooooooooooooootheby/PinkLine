@@ -18,13 +18,13 @@ PinkLine 是一款基于 Nuxt.js 的个人博客模版, 其快速, 简约, 轻�
 
 ## 特色
 
--   基于 Nuxt.js
--   强大的 CMS: @nuxt/content
--   SEO 友好
--   响应式布局
--   明暗模式
--   文章搜索
--   评论系统
+- 基于 Nuxt.js
+- 强大的 CMS: @nuxt/content
+- SEO 友好
+- 响应式布局
+- 明暗模式
+- 文章搜索
+- 评论系统
 
 ## 部署
 

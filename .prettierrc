@@ -1,0 +1,9 @@
+{
+	"tabWidth": 4,
+	"printWidth": 180,
+	"useTabs": true,
+	"semi": true,
+	"trailingComma": "es5",
+	"plugins": ["prettier-plugin-tailwindcss"],
+	"tailwindStylesheet": "./assets/base.css"
+}

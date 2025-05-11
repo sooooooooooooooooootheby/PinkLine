@@ -23,7 +23,7 @@ sort: use
 
 首先你需要 fork 到你的 github 库中.
 
-``` bash
+```bash
 git clone https://github.com/your_github_username/PinkLine.git
 
 cd PinkLine

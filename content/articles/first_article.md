@@ -37,7 +37,7 @@ Frontmatter需要使用Syntax, 也就是`---`去声明.
 
 举个栗子🌰
 
-``` markdown
+```markdown
 ---
 title: 开始使用 PinkLine
 date: Wed Mar 19 2025 15:53:46 GMT+0800
@@ -59,6 +59,6 @@ sort: use
 
 那么我在文章中的引入方式应当是这样的:
 
-``` markdown
+```markdown
 ![sotheby](/sotheby.webp)
 ```

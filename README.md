@@ -24,7 +24,7 @@ PinkLine 是一款基于 Nuxt.js 的个人博客模版, 其快速, 简约, 轻�
 
 本地部署
 
-``` bash
+```bash
 git clone https://github.com/sooooooooooooooooootheby/PinkLine.git
 
 cd PinkLine
