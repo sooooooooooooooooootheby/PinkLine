@@ -4,9 +4,9 @@
 
 PinkLine 是一款基于 Nuxt.js 的个人博客模版, 其快速, 简约, 轻量. 🍂
 
-![Static Badge](https://img.shields.io/badge/PinkLine-v1.0.1-%23d9908e)
+![Static Badge](https://img.shields.io/badge/PinkLine-v1.0.2-%23d9908e)
 ![Static Badge](https://img.shields.io/badge/Nuxt.js-v3.16.0-%2364D88A?logo=nuxt)
-![Static Badge](https://img.shields.io/badge/sass-v1.85.1-%23B14A7E?logo=sass)
+![Static Badge](https://img.shields.io/badge/tailwindcss-v4.1.6-%23B14A7E?logo=tailwindcss)
 
 [在线演示](https://pinkline.s22y.moe/) ｜ [使用说明](https://pinkline.s22y.moe/article)
 
@@ -17,7 +17,7 @@ PinkLine 是一款基于 Nuxt.js 的个人博客模版, 其快速, 简约, 轻�
 - SEO友好
 - 响应式布局
 - 明暗模式
-- 文章搜索
+- ~~文章搜索~~(暂时删除)
 - 评论系统
 
 ## 部署
