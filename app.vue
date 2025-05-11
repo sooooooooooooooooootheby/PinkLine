@@ -4,7 +4,7 @@
 			<appHeader />
 		</div>
 		<div class="min-h-screen p-6 lg:p-8">
-			<NuxtLoadingIndicator :color="color" :height="2" />
+			<NuxtLoadingIndicator color="#d9908e" :height="2" />
 			<NuxtLayout>
 				<NuxtPage />
 			</NuxtLayout>
@@ -37,14 +37,6 @@ useSeoMeta({
 		{ name: "ogDescription", content: appConfig.info.ogDescription },
 		{ name: "ogImage", content: appConfig.info.ogImage },
 	],
-});
-
-onMounted(() => {
-	const element: HTMLElement = document.documentElement;
-	const computedStyle: CSSStyleDeclaration = getComputedStyle(element);
-	const themeColor: string = computedStyle.getPropertyValue("--theme-color").trim();
-
-	color.value = themeColor;
 });
 </script>
 
