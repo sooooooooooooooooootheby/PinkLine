@@ -8,7 +8,7 @@ export default defineNuxtConfig({
         pageTransition: { name: "page", mode: "out-in" },
     },
 
-    modules: ["@nuxt/content", "@nuxt/icon", "nuxt-module-feed"],
+    modules: ["@nuxt/content", "@nuxt/icon", "nuxt-module-feed", "@nuxtjs/color-mode"],
 
     css: ["~/assets/base.css", "~/assets/waline.scss"],
 
@@ -33,5 +33,12 @@ export default defineNuxtConfig({
 
     vite: {
         plugins: [tailwindcss()],
+    },
+
+    colorMode: {
+        classPrefix: "",
+        classSuffix: "",
+        storage: "localStorage",
+        storageKey: "color-mode",
     },
 });

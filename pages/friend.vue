@@ -1,15 +1,15 @@
 <template>
     <div>
         <div>
-            <h1 class="text-3xl font-bold mb-10">来自互联网的朋友</h1>
+            <h1 class="text-3xl font-bold mb-10 dark:text-white">来自互联网的朋友</h1>
             <ul v-if="appConfig.friend.length" class="mb-8">
                 <li v-for="item in appConfig.friend">
                     <a :href="item.url" target="_block">
-                        <div class="flex items-center p-2 border border-gray-400 rounded-lg hover:shadow-lg duration-300">
+                        <div class="flex items-center p-2 border border-gray-400 rounded-lg hover:shadow-lg duration-300 dark:border-gray-600">
                             <img :src="item.image" alt="image" class="size-14 rounded-lg mr-2 lg:size-10" />
                             <div class="flex flex-col justify-center">
-                                <span class="text-lg font-bold">{{ item.name }}</span>
-                                <span class="text-sm text-gray-600">{{ item.info }}</span>
+                                <span class="text-lg font-bold dark:text-white">{{ item.name }}</span>
+                                <span class="text-sm text-gray-600 dark:border-gray-600">{{ item.info }}</span>
                             </div>
                         </div>
                     </a>

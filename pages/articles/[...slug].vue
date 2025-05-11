@@ -1,22 +1,22 @@
 <template>
     <div>
         <template v-if="article">
-            <div class="text-gray-600">
+            <div class="text-gray-600 dark:text-gray-400">
                 <NuxtLink to="/article">
                     <Icon name="akar-icons:arrow-back" class="mr-1 text-xs" />
                     <span class="text-sm">回到文章列表</span>
                 </NuxtLink>
             </div>
             <article>
-                <h1 class="text-3xl font-bold my-4">{{ article.title }}</h1>
-                <div class="text-sm text-gray-600">
+                <h1 class="text-3xl font-bold my-4 dark:text-white">{{ article.title }}</h1>
+                <div class="text-sm text-gray-600 dark:text-gray-400">
                     <span v-if="article.update" class="flex items-center">
                         {{ formattingTime(article.update) }}
                         <Icon name="mynaui:edit" class="ml-1" />
                     </span>
                     <span v-else>{{ formattingTime(article.date) }}</span>
                 </div>
-                <div class="text-sm text-gray-600 flex items-center">
+                <div class="text-sm text-gray-600 flex items-center dark:text-gray-400">
                     <span>#{{ article.sort }}</span>
                     <span class="mx-1">·</span>
                     <ul class="flex">
@@ -34,7 +34,7 @@
             </div>
         </template>
         <template v-else>
-            <div>
+            <div class="dark:text-white">
                 <h1 class="text-center text-xl font-bold mb-2">哦😯, 看起来我们没有找到你需要的文章.</h1>
                 <NuxtLink to="/article">
                     <p class="text-center underline">回到文章列表</p>

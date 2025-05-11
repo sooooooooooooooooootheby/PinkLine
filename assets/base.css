@@ -13,6 +13,7 @@
     --color-pinkline-900: oklch(0.36 0.05 21.2);
     --color-pinkline-950: oklch(0.28 0.03 21.2);
 }
+@custom-variant dark (&:where(.dark-mode, .dark-mode *));
 
 h1 > a,
 h2 > a,
@@ -21,4 +22,8 @@ h4 > a,
 h5 > a,
 h6 > a {
     text-decoration: none;
+}
+
+.dark-mode {
+    background-color: #09090B;
 }

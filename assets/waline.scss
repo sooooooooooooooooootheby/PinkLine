@@ -3,8 +3,8 @@
     --waline-white: #fff;
     --waline-light-grey: #999;
     --waline-dark-grey: #666;
-    --waline-theme-color: var(--theme-color);
-    --waline-active-color: var(--theme-color-hover);
+    --waline-theme-color: oklch(0.726 0.089 21.2);
+    --waline-active-color: oklch(0.86 0.06 21.2);
     --waline-color: #444;
     --waline-bg-color: #fff;
     --waline-bg-color-light: #f8f8f8;

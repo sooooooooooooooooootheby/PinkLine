@@ -1,16 +1,16 @@
 <template>
     <div>
-        <h1 class="text-3xl font-bold">这些是我的宝藏</h1>
+        <h1 class="text-3xl font-bold dark:text-white">这些是我的宝藏</h1>
         <div class="mb-6 mt-2">
-            <p class="text-sm text-gray-800">已经写了 {{ list?.length }} 篇文章了, 太棒了.</p>
+            <p class="text-sm text-gray-800 dark:text-gray-300">已经写了 {{ list?.length }} 篇文章了, 太棒了.</p>
         </div>
         <ul>
             <li v-for="item in list" class="mb-8">
                 <NuxtLink :to="item.path">
-                    <h2 class="text-xl font-bold">{{ item.title }}</h2>
-                    <p class="text-sm text-gray-700 my-2">{{ item.description }}</p>
+                    <h2 class="text-xl font-bold dark:text-white">{{ item.title }}</h2>
+                    <p class="text-sm text-gray-700 my-2 dark:text-gray-300">{{ item.description }}</p>
                 </NuxtLink>
-                <div class="flex text-sm text-gray-600">
+                <div class="flex text-sm text-gray-600 dark:text-gray-400">
                     <div class="flex items-center">
                         <span>{{ handleTime(item.date) }}</span>
                         <Icon name="mynaui:edit" v-if="item.update" />

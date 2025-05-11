@@ -6,12 +6,12 @@
         <div class="flex-1 flex justify-end">
             <ul class="flex">
                 <li class="mr-4" v-for="item in appConfig.page" :key="item.path">
-                    <NuxtLink class="text-xl text-gray-400" :to="item.path">
+                    <NuxtLink class="text-xl text-gray-400 dark:text-gray-600" :to="item.path">
                         <Icon :name="item.icon" />
                     </NuxtLink>
                 </li>
                 <li>
-                    <a href="/rss.xml" target="_blank" class="text-xl text-gray-400"><Icon name="akar-icons:rss" /></a>
+                    <a href="/rss.xml" target="_blank" class="text-xl text-gray-400 dark:text-gray-600"><Icon name="akar-icons:rss" /></a>
                 </li>
             </ul>
         </div>

@@ -3,7 +3,7 @@
         <div class="p-6">
             <appHeader />
         </div>
-        <div class="p-6 lg:p-8">
+        <div class="p-6 lg:p-8 min-h-screen">
             <NuxtLoadingIndicator :color="color" :height="2" />
             <NuxtLayout>
                 <NuxtPage />

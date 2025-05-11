@@ -3,8 +3,8 @@
         <ul class="flex flex-wrap mb-12">
             <li
                 v-for="tags in uniqueTags"
-                class="py-0.5 px-2 m-1 bg-pinkline-50 rounded-lg cursor-pointer"
-                :class="{ 'bg-pinkline-100': route.query.tag === tags }"
+                class="py-0.5 px-2 m-1 bg-pinkline-50 rounded-lg cursor-pointer dark:bg-transparent dark:text-white dark:border dark:border-zinc-600"
+                :class="{ 'bg-pinkline-100': route.query.tag === tags, 'dark:bg-pinkline-200!': route.query.tag === tags, 'dark:text-black!': route.query.tag === tags }"
                 @click="selectTag(tags)"
             >
                 {{ tags }}
@@ -13,11 +13,11 @@
         <ul v-if="searchResult">
             <li v-for="item in searchResult" class="mb-8">
                 <NuxtLink :to="item.path">
-                    <h2 class="text-xl font-bold">{{ item.title }}</h2>
-                    <p class="text-sm text-gray-700 my-2">{{ item.description }}</p>
+                    <h2 class="text-xl font-bold dark:text-white">{{ item.title }}</h2>
+                    <p class="text-sm text-gray-700 my-2 dark:text-gray-300">{{ item.description }}</p>
                 </NuxtLink>
                 <ul class="flex">
-                    <li v-for="tags in item.tag" class="text-sm text-gray-600 mr-1">
+                    <li v-for="tags in item.tag" class="text-sm text-gray-600 mr-1 dark:text-gray-400">
                         {{ tags }}
                     </li>
                 </ul>
