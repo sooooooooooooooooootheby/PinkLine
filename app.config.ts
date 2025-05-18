@@ -3,7 +3,7 @@ export default defineAppConfig({
 		title: "PinkLine",
 		author: "s22y",
 		lang: "zh-cn",
-		logo: "/logo_small.webp",
+		logo: "/logo_MG.gif",
 		headLogo: "/logo_MG.gif",
 		description: "基于nuxt.js的博客",
 		ogDescription: "基于nuxt.js的博客",

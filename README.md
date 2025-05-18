@@ -46,4 +46,4 @@ npm run dev
 ## Todo
 
 - [x] 标签 & 分类 页面
-- [ ] 修复logo的引用问题
+- [x] 修复logo的引用问题
