@@ -2,14 +2,15 @@ import { defineContentConfig, defineCollection, z } from "@nuxt/content";
 
 export default defineContentConfig({
 	collections: {
-		content: defineCollection({
+		page: defineCollection({
 			type: "page",
 			source: "page/*.md",
 		}),
-		articles: defineCollection({
+		blog: defineCollection({
 			type: "page",
-			source: "articles/*.md",
+			source: "blog/*.md",
 			schema: z.object({
+				title: z.string(),
 				description: z.string(),
 				date: z.date(),
 				update: z.date(),
@@ -17,11 +18,21 @@ export default defineContentConfig({
 				sort: z.string(),
 			}),
 		}),
-		notes: defineCollection({
+		note: defineCollection({
 			type: "page",
-			source: "notes/*.md",
+			source: "note/*.md",
 			schema: z.object({
 				date: z.date(),
+			}),
+		}),
+		friends: defineCollection({
+			type: "data",
+			source: "data/friends/*.json",
+			schema: z.object({
+				name: z.string(),
+				info: z.string(),
+				url: z.string(),
+				image: z.string(),
 			}),
 		}),
 	},

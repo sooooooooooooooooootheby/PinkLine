@@ -1,44 +1,34 @@
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-	compatibilityDate: "2024-11-01",
+	compatibilityDate: "2025-07-15",
 	devtools: { enabled: true },
+	modules: ["@nuxt/content", "@nuxt/icon", "nuxt-shiki", "@nuxtjs/color-mode"],
 
-	app: {
-		pageTransition: { name: "page", mode: "out-in" },
-	},
-
-	modules: ["@nuxt/content", "@nuxt/icon", "nuxt-module-feed", "@nuxtjs/color-mode"],
-
-	css: ["~/assets/base.css", "~/assets/waline.scss"],
-
-	nitro: {
-		prerender: {
-			routes: ["/rss.xml"],
-		},
-	},
-
-	content: {
-		preview: {
-			api: "https://api.nuxt.studio",
-		},
-		build: {
-			markdown: {
-				highlight: {
-					theme: "catppuccin-frappe",
-				},
-			},
-		},
-	},
+	css: ["~/assets/main.css"],
 
 	vite: {
 		plugins: [tailwindcss()],
 	},
 
+	content: {
+		build: {
+			markdown: {
+				toc: {
+					depth: 4,
+				},
+			},
+		},
+	},
+
 	colorMode: {
 		classPrefix: "",
 		classSuffix: "",
-		storage: "localStorage",
-		storageKey: "color-mode",
+	},
+	shiki: {
+		defaultTheme: {
+			light: "min-light",
+			dark: "ayu-dark",
+		},
 	},
 });

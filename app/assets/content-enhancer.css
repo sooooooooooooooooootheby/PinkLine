@@ -1,0 +1,87 @@
+@import "tailwindcss";
+@import "./utilities.css";
+
+.enhancer {
+	/* Headers and text */
+	h1 {
+		@apply text-default mb-8 text-4xl font-bold;
+	}
+	h2 {
+		@apply text-default mb-6 mt-12 text-2xl font-bold;
+
+		a {
+			@apply text-default;
+		}
+	}
+	h3 {
+		@apply text-default mb-3 mt-8 text-xl font-bold;
+
+		a {
+			@apply text-default;
+		}
+	}
+	h4 {
+		@apply text-default mb-2 mt-6 text-lg font-bold;
+
+		a {
+			@apply text-default;
+		}
+	}
+	p {
+		@apply text-default my-5 leading-7;
+	}
+	strong,
+	em {
+		@apply text-default font-bold;
+	}
+	em {
+		@apply font-normal;
+	}
+	a {
+		@apply text-purple-400 duration-150;
+	}
+	a:hover {
+		@apply text-purple-600 underline;
+	}
+	blockquote {
+		@apply border-s-4 border-gray-800 ps-4 italic;
+	}
+	hr {
+		@apply border-default my-12 border-t;
+	}
+
+	img {
+		@apply my-4 rounded-xl duration-150;
+	}
+
+	ul {
+		@apply my-5 list-disc ps-6 marker:text-gray-200;
+
+		li {
+			@apply my-1.5 ps-1.5 leading-7 [&>ul]:my-0;
+		}
+	}
+	ol {
+		@apply my-5 list-decimal ps-6 marker:text-gray-500;
+
+		li {
+			@apply my-1.5 ps-1.5 leading-7 [&>ul]:my-0;
+		}
+	}
+
+	table {
+		@apply relative my-5 overflow-x-auto;
+	}
+	table {
+		@apply w-full border-separate border-spacing-0 rounded-md;
+	}
+	tr {
+		@apply [&:first-child>th:first-child]:rounded-tl-md [&:first-child>th:last-child]:rounded-tr-md [&:last-child>td:first-child]:rounded-bl-md [&:last-child>td:last-child]:rounded-br-md;
+	}
+	th {
+		@apply bg-gray-100/50 border-default border-b border-e border-t px-4 py-3 text-left text-sm font-semibold first:border-s;
+	}
+	td {
+		@apply border-default [&_ul]:ps-4.5 [&_ol]:ps-4.5 border-b border-e px-4 py-3 text-left align-top text-sm first:border-s [&_code]:text-xs/5 [&_li]:my-0.5 [&_li]:leading-6 [&_ol]:my-0 [&_p]:my-0 [&_p]:leading-6 [&_ul]:my-0;
+	}
+}
