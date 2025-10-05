@@ -1,7 +1,7 @@
 <template>
-	<div class="border-1 border-default relative my-4 min-h-[16.5px] rounded-xl text-sm shadow-sm duration-200 hover:shadow-md hover:[&>*]:opacity-100">
-		<div v-if="filename" class="border-b-1 border-default bg-gray-50! px-5 py-2">
-			<p class="m-0 text-gray-500">{{ filename }}</p>
+	<div class="border-1 border-default relative my-4 overflow-hidden min-h-[16.5px] rounded-xl text-sm shadow-sm duration-200 hover:shadow-md hover:[&>*]:opacity-100">
+		<div v-if="filename" class="border-b-1 border-default bg-default! px-5 py-2">
+			<p class="m-0! text-gray-400">{{ filename }}</p>
 		</div>
 		<Shiki lang="js" :code="code" class="scrollbar-hide block w-full overflow-y-scroll rounded-xl p-5 dark:bg-[#0B0E13]" />
 		<div class="border-1 border-default absolute right-2 top-2 z-10 flex rounded-lg p-1.5 sm:opacity-0 transition-opacity duration-200 active:scale-90 bg-default" @click="copyCode">
