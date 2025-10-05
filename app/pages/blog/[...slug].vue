@@ -2,12 +2,12 @@
 	<div class="text-sm">
 		<div v-if="blog">
 			<div class="px-2 py-4">
-				<NuxtLink to="/blog" class="flex items-center gap-1 text-default-2 mb-2">
+				<NuxtLink to="/blog" class="text-default-2 mb-2 flex items-center gap-1">
 					<Icon name="gravity-ui:arrow-left" class="text-xs" />
 					<span>Return Blog List</span>
 				</NuxtLink>
-				<h1 class="text-4xl font-bold text-default">{{ blog.title }}</h1>
-				<div class="mt-2 text-xs text-default-1">
+				<h1 class="text-default text-4xl font-bold">{{ blog.title }}</h1>
+				<div class="text-default-1 mt-2 text-xs">
 					<div class="flex items-center gap-2">
 						<span class="flex items-center gap-1">
 							<Icon name="gravity-ui:clock" />
@@ -35,9 +35,10 @@
 				</ul>
 			</div>
 			<division />
-			<div class="px-2 text-default-1">
+			<div class="text-default-1 px-2">
 				<enhancer :content="blog" />
 			</div>
+			<comment />
 		</div>
 		<div v-else>
 			<div class="flex min-h-[calc(100vh-256px)] flex-col items-center justify-center">
@@ -58,6 +59,6 @@ const { data: blog } = await useAsyncData(route.path, () =>
 );
 
 useHead({
-	title: `${blog.value?.title} | ${appConfig.info.title}`
+	title: `${blog.value?.title} | ${appConfig.info.title}`,
 });
 </script>

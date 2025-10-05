@@ -18,6 +18,7 @@
 		<div class="text-default-1">
 			<enhancer :content="content" />
 		</div>
+		<comment />
 	</div>
 </template>
 
