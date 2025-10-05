@@ -13,6 +13,7 @@ export default defineAppConfig({
 			isLogo: true,
 			isTitle: false,
 		},
+		comment: false,
 	},
 	contact: [
 		{
