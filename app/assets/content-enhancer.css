@@ -38,10 +38,10 @@
 		@apply font-normal;
 	}
 	a {
-		@apply text-purple-400 duration-150;
+		@apply text-pinkline-400 duration-150;
 	}
 	a:hover {
-		@apply text-purple-600 underline;
+		@apply text-pinkline-600 underline;
 	}
 	blockquote {
 		@apply border-s-4 border-gray-800 ps-4 italic;
@@ -55,14 +55,14 @@
 	}
 
 	ul {
-		@apply my-5 list-disc ps-6 marker:text-gray-200;
+		@apply my-5 list-disc ps-6 marker:text-pinkline-200;
 
 		li {
 			@apply my-1.5 ps-1.5 leading-7 [&>ul]:my-0;
 		}
 	}
 	ol {
-		@apply my-5 list-decimal ps-6 marker:text-gray-500;
+		@apply my-5 list-decimal ps-6 marker:text-pinkline-500;
 
 		li {
 			@apply my-1.5 ps-1.5 leading-7 [&>ul]:my-0;
