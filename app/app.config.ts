@@ -68,4 +68,7 @@ export default defineAppConfig({
 		{ path: "/note", name: "Note", title: "Note", icon: "akar-icons:coffee" },
 		{ path: "/friends", name: "Friends", title: "Friends", icon: "akar-icons:coffee" },
 	],
+	rss: {
+		link: "blog.s22y.moe",
+	},
 });
