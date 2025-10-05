@@ -1,3 +1,6 @@
+::card
+::
+
 ::hero
 #title
 Hi!   I'm S22y ฅ^•ﻌ•^ฅ
