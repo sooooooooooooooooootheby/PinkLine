@@ -1,12 +1,6 @@
 <template>
 	<div>
 		<ul class="flex items-center flex-wrap gap-2 px-2">
-			<li class="flex cursor-pointer items-center text-default-1" v-if="route.query.sort" @click="clearSort" title="清除筛选">
-				<Icon name="gravity-ui:circle-xmark" />
-			</li>
-			<li class="flex items-center text-default-2" v-else>
-				<Icon name="gravity-ui:circle" />
-			</li>
 			<li
 				v-for="item in uniqueSorts"
 				:key="item"
