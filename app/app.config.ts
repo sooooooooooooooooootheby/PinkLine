@@ -15,7 +15,13 @@ export default defineAppConfig({
 			isLogo: true,						// 是否显示导航栏的图标
 			isTitle: false,						// 是否显示导航栏的标题
 		},
-		comment: false,							// 是否启用评论区
+		comment: true,							// 是否启用评论区
+	},
+	// 评论区
+	// 评论区使用的插件: https://utteranc.es/
+	comment: {
+		repo: "sooooooooooooooooootheby/PinkLine", // 这里要填你的博客的github地址
+		issue_term: "title"						// 可选项: pathname, url, title, og:title, [ENTER ISSUE NUMBER HERE], [ENTER TERM HERE]
 	},
 	// 联系方式
 	contact: [

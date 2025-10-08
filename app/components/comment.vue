@@ -67,8 +67,8 @@ onMounted(() => {
 
 		const script = document.createElement("script");
 		script.src = "https://utteranc.es/client.js";
-		script.setAttribute("repo", "sooooooooooooooooootheby/PinkLine");
-		script.setAttribute("issue-term", "title");
+		script.setAttribute("repo", appConfig.comment.repo);
+		script.setAttribute("issue-term", appConfig.comment.issue_term);
 		script.setAttribute("theme", initialTheme);
 		script.setAttribute("crossorigin", "anonymous");
 		script.async = true;
