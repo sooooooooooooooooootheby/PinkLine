@@ -14,6 +14,7 @@ export default defineNuxtConfig({
 	content: {
 		build: {
 			markdown: {
+				highlight: false,
 				toc: {
 					depth: 4,
 				},
