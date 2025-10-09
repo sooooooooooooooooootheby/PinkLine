@@ -1,7 +1,7 @@
 <template>
 	<div class="flex items-center justify-between">
 		<div class="flex items-center gap-2">
-			<img src="/logo_MG.gif" alt="logo" class="w-7" v-if="appConfig.switch.appHeader.isLogo" />
+			<img :src="appConfig.info.logo" alt="logo" class="w-7" v-if="appConfig.switch.appHeader.isLogo" />
 			<span class="text-lg" v-if="appConfig.switch.appHeader.isTitle">PinkLine</span>
 		</div>
 		<ul class="flex items-center gap-3 text-sm">
