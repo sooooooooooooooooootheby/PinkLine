@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<ul class="flex items-center flex-wrap gap-2 px-2">
+		<ul class="flex items-center flex-wrap gap-2 px-2" v-if="sortData">
 			<li
 				v-for="item in uniqueSorts"
 				:key="item"
@@ -27,8 +27,8 @@
 					<div class="flex items-center gap-[1px]">
 						<span class="text-[8px]">#</span>
 						<span>{{ post.sort }}</span>
-						<span class="mx-1 text-[8px]">/</span>
-						<div v-for="(tags, index) in post.tag" :key="index">
+						<span class="mx-1 text-[8px]" v-if="post.tag">/</span>
+						<div v-for="(tags, index) in post.tag" :key="index" v-if="post.tag">
 							<span>{{ tags }}</span>
 							<span class="mx-[2px]" :class="{ hidden: index === post.tag.length - 1 }">, </span>
 						</div>
