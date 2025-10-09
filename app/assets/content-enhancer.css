@@ -55,14 +55,14 @@
 	}
 
 	ul {
-		@apply my-5 list-disc ps-6 marker:text-pinkline-200;
+		@apply marker:text-pinkline-200 my-5 list-disc ps-6;
 
 		li {
 			@apply my-1.5 ps-1.5 leading-7 [&>ul]:my-0;
 		}
 	}
 	ol {
-		@apply my-5 list-decimal ps-6 marker:text-pinkline-500;
+		@apply marker:text-pinkline-500 my-5 list-decimal ps-6;
 
 		li {
 			@apply my-1.5 ps-1.5 leading-7 [&>ul]:my-0;
@@ -79,14 +79,14 @@
 		@apply [&:first-child>th:first-child]:rounded-tl-md [&:first-child>th:last-child]:rounded-tr-md [&:last-child>td:first-child]:rounded-bl-md [&:last-child>td:last-child]:rounded-br-md;
 	}
 	th {
-		@apply bg-gray-100/50 border-default border-b border-e border-t px-4 py-3 text-left text-sm font-semibold first:border-s;
+		@apply border-default border-b border-e border-t bg-gray-100/50 px-4 py-3 text-left text-sm font-semibold first:border-s;
 	}
 	td {
 		@apply border-default [&_ul]:ps-4.5 [&_ol]:ps-4.5 border-b border-e px-4 py-3 text-left align-top text-sm first:border-s [&_code]:text-xs/5 [&_li]:my-0.5 [&_li]:leading-6 [&_ol]:my-0 [&_p]:my-0 [&_p]:leading-6 [&_ul]:my-0;
 	}
 
 	code {
-		@apply border-pinkline-200 border-1 px-1 py-0.5 rounded-md bg-pinkline-50 dark:bg-pinkline-500/25 dark:border-pinkline-500/10;
+		@apply border-pinkline-200 border-1 bg-pinkline-50 dark:bg-pinkline-500/25 dark:border-pinkline-500/10 rounded-md px-1 py-0.5;
 	}
 	pre code {
 		@apply border-none;

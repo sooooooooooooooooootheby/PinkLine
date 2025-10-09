@@ -1,34 +1,34 @@
 export default defineAppConfig({
 	// 博客的基本信息
 	info: {
-		title: "PinkLine",						// 标题
-		author: "s22y",							// 作者
-		lang: "zh-cn",							// 语言
-		logo: "/logo_MG.gif",					// logo icon
-		description: "基于nuxt.js的博客",		 // 简介
-		ogDescription: "基于nuxt.js的博客",		 // og 简介
-		ogImage: "/Canvas-Ruom.webp",			// og 图片
+		title: "PinkLine", // 标题
+		author: "s22y", // 作者
+		lang: "zh-cn", // 语言
+		logo: "/logo_MG.gif", // logo icon
+		description: "基于nuxt.js的博客", // 简介
+		ogDescription: "基于nuxt.js的博客", // og 简介
+		ogImage: "/Canvas-Ruom.webp", // og 图片
 	},
 	// 功能开关
 	switch: {
 		appHeader: {
-			isLogo: true,						// 是否显示导航栏的图标
-			isTitle: false,						// 是否显示导航栏的标题
+			isLogo: true, // 是否显示导航栏的图标
+			isTitle: false, // 是否显示导航栏的标题
 		},
-		comment: true,							// 是否启用评论区
+		comment: true, // 是否启用评论区
 	},
 	// 评论区
 	// 评论区使用的插件: https://utteranc.es/
 	comment: {
 		repo: "sooooooooooooooooootheby/PinkLine", // 这里要填你的博客的github地址
-		issue_term: "title"						// 可选项: pathname, url, title, og:title, [ENTER ISSUE NUMBER HERE], [ENTER TERM HERE]
+		issue_term: "title", // 可选项: pathname, url, title, og:title, [ENTER ISSUE NUMBER HERE], [ENTER TERM HERE]
 	},
 	// 联系方式
 	contact: [
 		{
-			platform: "Discord",				// 平台
-			url: "https://pinkline.s22y.moe/",	// 链接
-			icon: "akar-icons:coffee",			// 图标 图标库: https://yesicon.app/
+			platform: "Discord", // 平台
+			url: "https://pinkline.s22y.moe/", // 链接
+			icon: "akar-icons:coffee", // 图标 图标库: https://yesicon.app/
 		},
 		{
 			platform: "Discord",
@@ -49,10 +49,10 @@ export default defineAppConfig({
 	// 项目
 	project: [
 		{
-			name: "Blog",								// 名字
-			info: "这是一个博客.",						 // 介绍
-			url: "https://pinkline.s22y.moe/",			// 链接
-			time: "Wed Mar 10 2025 15:53:43 GMT+0800",	// 时间 支持UTC和ISO格式
+			name: "Blog", // 名字
+			info: "这是一个博客.", // 介绍
+			url: "https://pinkline.s22y.moe/", // 链接
+			time: "Wed Mar 10 2025 15:53:43 GMT+0800", // 时间 支持UTC和ISO格式
 		},
 		{
 			name: "Blog",
@@ -76,10 +76,10 @@ export default defineAppConfig({
 	// 页面
 	page: [
 		{
-			path: "/",					// 路径
-			name: "S22y",				// 名字
-			title: "",					// 显示的名字
-			icon: "akar-icons:coffee"	// 图标 (暂时没用)
+			path: "/", // 路径
+			name: "S22y", // 名字
+			title: "", // 显示的名字
+			icon: "akar-icons:coffee", // 图标 (暂时没用)
 		},
 		{ path: "/blog", name: "Blog", title: "Blog", icon: "akar-icons:coffee" },
 		{ path: "/note", name: "Note", title: "Note", icon: "akar-icons:coffee" },
@@ -87,6 +87,6 @@ export default defineAppConfig({
 	],
 	// rss
 	rss: {
-		link: "blog.s22y.moe",			// 填写你博客的域名即可
+		link: "blog.s22y.moe", // 填写你博客的域名即可
 	},
 });

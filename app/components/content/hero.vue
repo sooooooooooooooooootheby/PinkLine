@@ -9,7 +9,7 @@
 				<Icon name="gravity-ui:location-arrow" />
 				<slot name="location" mdc-unwrap="p" />
 			</div>
-			<NuxtLink to="/rss.xml" target="_blank" class="flex items-center text-default-2!">
+			<NuxtLink to="/rss.xml" target="_blank" class="text-default-2! flex items-center">
 				<Icon name="lucide:rss" />
 			</NuxtLink>
 		</div>

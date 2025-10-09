@@ -1,28 +1,28 @@
 <template>
 	<div>
-		<ul class="flex items-center flex-wrap gap-2 px-2" v-if="sortData">
+		<ul class="flex flex-wrap items-center gap-2 px-2" v-if="sortData">
 			<li
 				v-for="item in uniqueSorts"
 				:key="item"
-				class="cursor-pointer text-default-1 duration-200 hover:text-default"
-				:class="{ 'font-semibold text-default!': route.query.sort === item }"
+				class="text-default-1 hover:text-default cursor-pointer duration-200"
+				:class="{ 'text-default! font-semibold': route.query.sort === item }"
 				@click="applySort(item)"
 			>
 				<span class="mr-px text-xs">#</span>
 				{{ item }}
 			</li>
 		</ul>
-		<division class="mt-2 mb-6" />
+		<division class="mb-6 mt-2" />
 		<ul class="flex flex-col gap-6 px-2">
 			<li v-if="!filteredList.length" class="text-default">
 				<p>找不到文章哦.</p>
-				<p class="text-xs text-default-1">请联系一下站长是不是网站的配置有问题.</p>
+				<p class="text-default-1 text-xs">请联系一下站长是不是网站的配置有问题.</p>
 			</li>
 			<li v-for="post in filteredList" :key="post.path">
 				<p class="text-default">
 					<NuxtLink :to="post.path">{{ post.title }}</NuxtLink>
 				</p>
-				<div class="flex items-center text-xs text-default-2">
+				<div class="text-default-2 flex items-center text-xs">
 					<span class="mr-3">{{ formattingTime(new Date(post.date)) }}</span>
 					<div class="flex items-center gap-[1px]">
 						<span class="text-[8px]">#</span>
@@ -34,7 +34,7 @@
 						</div>
 					</div>
 				</div>
-				<p class="text-sm text-default-1">{{ post.description }}</p>
+				<p class="text-default-1 text-sm">{{ post.description }}</p>
 			</li>
 		</ul>
 	</div>
@@ -97,10 +97,10 @@ const filteredList = computed(() => {
 	});
 });
 
-const currentPage = appConfig.page.find(p => p.path === route.path);
+const currentPage = appConfig.page.find((p) => p.path === route.path);
 const pageTitle = currentPage?.title && currentPage.title.trim() !== "" ? currentPage.title : "PinkLine";
 
 useHead({
-	title: `${pageTitle} | ${appConfig.info.title}`
+	title: `${pageTitle} | ${appConfig.info.title}`,
 });
 </script>

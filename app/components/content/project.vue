@@ -9,7 +9,7 @@
 					<NuxtLink :to="item.url" class="text-default-1! underline">{{ item.url }}</NuxtLink>
 				</div>
 				<p class="m-0!">{{ item.info }}</p>
-				<p class="text-default-2 text-xs m-0!">{{ formattingTime(item.time) }}</p>
+				<p class="text-default-2 m-0! text-xs">{{ formattingTime(item.time) }}</p>
 			</li>
 		</ul>
 	</div>

@@ -1,6 +1,6 @@
 ::hero
 #title
-Hi!   I'm S22y ฅ^•ﻌ•^ฅ
+Hi! I'm S22y ฅ^•ﻌ•^ฅ
 
 #location
 GuangXi, GuiLin

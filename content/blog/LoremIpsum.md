@@ -16,9 +16,11 @@ Ut nec nunc aliquet sem molestie egestas. Mauris libero ipsum, tempus eu dapibus
 
 Cras pellentesque, purus a facilisis malesuada, dolor purus dapibus elit, sed luctus nunc quam id enim. Vivamus tincidunt justo in magna vulputate, iaculis lobortis massa mollis.
 
-```typescript
+````typescript
 export default function (text: any) {
-	const cleanText = String(text).replace(/```[\s\S]*?```/g, "").replace(/<[^>]*>/g, "");
+	const cleanText = String(text)
+		.replace(/```[\s\S]*?```/g, "")
+		.replace(/<[^>]*>/g, "");
 
 	const chineseCharCount = (cleanText.match(/[\u4e00-\u9fa5]|[\u3000-\u303f]|[\uff00-\uffef]/g) || []).length;
 	const englishWordCount = (cleanText.match(/\b[a-zA-Z]+\b/g) || []).length;
@@ -27,8 +29,8 @@ export default function (text: any) {
 	const readingTimeMinutes = Math.ceil(totalWords / 250);
 
 	return Math.max(1, readingTimeMinutes);
-};
-```
+}
+````
 
 ## Sed egestas.
 
@@ -36,13 +38,13 @@ export default function (text: any) {
 - Duis facilisis arcu sed posuere pharetra.
 - Sed vel velit vel neque sodales volutpat vel quis justo.
 
-| Task ID | Task Name | Assignee | Priority | Status | Progress | Due Date |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| T-103 | Design Homepage Mockup | Sarah Johnson | High | **In Progress** | 75% | 2023-12-15 |
-| T-227 | Database Optimization | David Chen | Medium | **Completed** | 100% | 2023-11-30 |
-| T-341 | Write API Documentation | Maria Garcia | Low | **Not Started** | 0% | 2024-01-22 |
-| T-456 | User Authentication Test | Alex Wong | High | **In Progress** | 90% | 2023-12-05 |
-| T-598 | Update Footer Links | Emily Davis | Low | **Blocked** | 10% | 2024-02-10 |
+| Task ID | Task Name                | Assignee      | Priority | Status          | Progress | Due Date   |
+| :------ | :----------------------- | :------------ | :------- | :-------------- | :------- | :--------- |
+| T-103   | Design Homepage Mockup   | Sarah Johnson | High     | **In Progress** | 75%      | 2023-12-15 |
+| T-227   | Database Optimization    | David Chen    | Medium   | **Completed**   | 100%     | 2023-11-30 |
+| T-341   | Write API Documentation  | Maria Garcia  | Low      | **Not Started** | 0%       | 2024-01-22 |
+| T-456   | User Authentication Test | Alex Wong     | High     | **In Progress** | 90%      | 2023-12-05 |
+| T-598   | Update Footer Links      | Emily Davis   | Low      | **Blocked**     | 10%      | 2024-02-10 |
 
 Praesent luctus pharetra nunc, sit amet fermentum erat. Nam blandit orci dui, euismod scelerisque mi scelerisque ac. Ut ultricies non enim at fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent euismod nulla pulvinar enim iaculis tincidunt. Cras non commodo sem. Ut porttitor massa dignissim felis eleifend tincidunt. Donec posuere tortor tempus tristique lacinia.
 

@@ -1,7 +1,7 @@
 <template>
 	<div class="text-sm">
 		<division />
-		<div class="flex sm:items-center justify-between p-4 text-default-1 max-sm:flex-col">
+		<div class="text-default-1 flex justify-between p-4 max-sm:flex-col sm:items-center">
 			<div>
 				<p>Copyright © 2025 | All rights reserved.</p>
 			</div>

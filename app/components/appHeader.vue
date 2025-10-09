@@ -6,10 +6,7 @@
 		</div>
 		<ul class="flex items-center gap-3 text-sm">
 			<li v-for="item in appConfig.page" :key="item.path">
-				<NuxtLink
-					:to="item.path"
-					:class="isPath(item.path) ? 'text-default font-bold' : 'text-default-1'"
-				>
+				<NuxtLink :to="item.path" :class="isPath(item.path) ? 'text-default font-bold' : 'text-default-1'">
 					{{ item.name }}
 				</NuxtLink>
 			</li>
@@ -23,5 +20,5 @@ const route = useRoute();
 
 const isPath = (path: string) => {
 	return route.path === path;
-}
+};
 </script>
