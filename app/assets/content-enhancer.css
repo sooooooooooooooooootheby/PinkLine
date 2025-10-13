@@ -1,4 +1,4 @@
-@imp:rt "tailwindcss";
+@import "tailwindcss";
 @import "./utilities.css";
 
 .enhancer {
