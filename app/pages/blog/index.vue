@@ -19,7 +19,7 @@
 				<p class="text-default-1 text-xs">请联系一下站长是不是网站的配置有问题.</p>
 			</li>
 			<li v-for="post in filteredList" :key="post.path">
-				<p class="text-default">
+				<p class="text-default font-medium">
 					<NuxtLink :to="post.path">{{ post.title }}</NuxtLink>
 				</p>
 				<div class="text-default-2 flex items-center text-xs">
